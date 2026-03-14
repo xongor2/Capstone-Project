@@ -1,0 +1,29 @@
+﻿commit b905ff5d6addab4734c9e28275d68b8eb82daf7e
+Author: Your Name <halsan252@gmail.com>
+Date:   Sat Mar 14 21:37:34 2026 +0100
+
+    added all Capstone Project
+
+A	.gitignore
+A	error.txt
+A	package-lock.json
+A	package.json
+A	src/config/cloudinary.js
+A	src/config/db.js
+A	src/controllers/adminController.js
+A	src/controllers/authController.js
+A	src/controllers/categoryController.js
+A	src/controllers/transactionController.js
+A	src/controllers/uploadController.js
+A	src/index.js
+A	src/middlewares/authMiddleware.js
+A	src/middlewares/errorHandler.js
+A	src/models/Category.js
+A	src/models/Transaction.js
+A	src/models/User.js
+A	src/routes/admin.js
+A	src/routes/auth.js
+A	src/routes/categories.js
+A	src/routes/transactions.js
+A	src/routes/upload.js
+A	src/validators/index.js
