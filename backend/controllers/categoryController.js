@@ -7,6 +7,14 @@ const getCategories = async (req, res) => {
         { name: 'Entertainment', type: 'expense' },
         { name: 'Transport', type: 'expense' },
         { name: 'Freelance', type: 'income' },
+        { name: 'Shopping', type: 'expense' },
+        { name: 'Family Support', type: 'expense' },
+        { name: 'Education', type: 'expense' },
+        { name: 'Mobile Internet', type: 'expense' },
+        { name: 'WiFi Internet', type: 'expense' },
+        { name: 'Health Care', type: 'expense' },
+        { name: 'Helping Out a Friend', type: 'expense' },
+        { name: 'Debt', type: 'expense' },
     ];
     res.json(predefinedCategories);
 };
