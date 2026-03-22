@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -87,8 +88,20 @@ app.use('/categories', categoryRoutes);
 app.use('/upload', uploadRoutes);
 app.use('/admin', adminRoutes);
 
+// Serve React frontend in production
+if (process.env.NODE_ENV === 'production') {
+    const frontendDist = path.join(__dirname, '../frontend/dist');
+    app.use(express.static(frontendDist));
+    // Any route not handled by API → return React index.html
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(frontendDist, 'index.html'));
+    });
+} else {
+    // Development: show 404 for unknown API routes
+    app.use(notFoundHandler);
+}
+
 // Error Handling
-app.use(notFoundHandler);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
